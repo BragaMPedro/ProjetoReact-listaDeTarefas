@@ -1,3 +1,4 @@
+import { ToDoProvider } from "./context/ToDoContext"
 import { GlobalStyle } from "./Styles/global"
 import { Home } from "./pages/Home/Home"
 
@@ -5,8 +6,10 @@ function App() {
 
   return (
     <>
-      <GlobalStyle/>
-      <Home/>    
+      <ToDoProvider>
+          <GlobalStyle/>
+          <Home/>
+      </ToDoProvider>
     </>
   )
 }
