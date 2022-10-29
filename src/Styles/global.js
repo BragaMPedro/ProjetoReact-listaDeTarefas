@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 
     input, textarea, button {
         cursor: pointer;
+        border: 0;
     }
 
     [disabled] {
