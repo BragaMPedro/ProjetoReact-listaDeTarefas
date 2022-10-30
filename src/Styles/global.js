@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background-color: #c4c4cc;
         color: #010030;
+        font-family: 'Montserrat', sans-serif;
     }
 
     input, textarea, button {
