@@ -1,52 +1,65 @@
-import { Container, Header, SuasListas } from "./listsBarStyle";
-import { listasArray } from "../../utils/listas";
-import { Plus, Trash } from "phosphor-react";
-import { useContext, useState } from "react";
-import { ToDoContext } from "../../context/ToDoContext";
+import { Container, Header, SuasListas } from "./listsBarStyle"
+import { Plus, Trash } from "phosphor-react"
+import { useContext, useState } from "react"
+import { ToDoContext } from "../../context/ToDoContext"
 
-export function ListsBar(){
-    const {selected, handleMostrarTarefas, setSelected, lista, setListas} = useContext(ToDoContext);
+export function ListsBar() {
+   const { selected, setSelected, listas, setListas } = useContext(ToDoContext)
 
-    function handleNewList(event){
-        let data = new Date();
-        
-        const NewList = {
-            id: Math.random(),
-            nome: "Nova Lista",
-            dataCriacao: `${data.getDate()}/${data.getMonth()}/${data.getFullYear()}`,
-            tarefas:[ 
-                {
-                    id: Math.random(),
-                    nome: "Nova Tarefa",
-                }]
-        }
-        setListas(...NewList);
-        console.log(NewList);
-        console.log(lista);
-    }
+//    function handleSelectedLista(lista){
+//     setSelected(lista)
+//    }
 
-    function deleteLista(event){
-        selected
-    }
+   function handleNewList(event) {
+      let data = new Date()
 
-    return(
-        <Container>
-            <Header>
-                <button onClick={handleNewList}>
-                    <Plus/>
-                </button>
-                <button onClick={deleteLista}>
-                    <Trash/>
-                </button>
-            </Header>
-            <SuasListas>
-                {listasArray.map(lista =>{
-                    return(
-                        <span key={lista.id} onClick={(event) =>{( handleMostrarTarefas(lista.id) )}}> {lista.nome} </span>
+      const NewList = {
+         id: Math.random(),
+         nome: "Nova Lista",
+         dataCriacao: `${data.getDate()}/${data.getMonth()}/${data.getFullYear()}`,
+         tarefas: [
+            {
+               id: Math.random(),
+               nome: "Nova Tarefa",
+            },
+         ],
+      }
 
-                        )
-                    })}
-            </SuasListas>
-        </Container>
-    )
+      setListas([...listas, NewList])
+      setSelected(NewList)
+   }
+
+   function deleteLista(event) {
+      const listWithoutDelete = listas.filter(lista => lista.id !== selected.id)
+      setListas(listWithoutDelete)
+      setSelected(listas[0])
+   }
+
+   return (
+      <Container>
+         <Header>
+            <button onClick={handleNewList}>
+               <Plus />
+            </button>
+
+            <button onClick={deleteLista}>
+               <Trash />
+            </button>
+         </Header>
+         <SuasListas>
+            {listas.map(lista => {
+               return (
+                  <span
+                     key={lista.id}
+                     className={lista.id == selected.id ? "btn-lista-selected" : "btn-lista"}
+                     onClick={(event) =>(
+                        setSelected(lista)
+                     )}>
+                     {lista.nome}
+                  </span>
+               )
+            })}
+         </SuasListas>
+      </Container>
+   )
 }

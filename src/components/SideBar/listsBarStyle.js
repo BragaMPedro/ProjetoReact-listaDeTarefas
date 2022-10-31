@@ -43,7 +43,7 @@ export const SuasListas = styled.div`
     width: 80%;
     margin: 2rem 0;
 
-    span{
+    .btn-lista{
         height: fit-content;
         min-height: 2.5rem;
         padding: 0.5rem 1rem;
@@ -55,21 +55,27 @@ export const SuasListas = styled.div`
         color: aliceblue;
     }
 
-    span:hover{
+    .btn-lista:hover{
         border: 5px double;
-        border-radius: 10px;
-        background-color: #16276c;
-        transform: scale(1.05);
-        filter: brightness(0.9);
+        transform: scale(1.1);
+        box-shadow: 0.05rem 0 0.4rem #090919 inset;
+        filter: brightness(1.2);
         transition-duration: 0.5s;
         cursor: pointer;
     }
     
-    span:checked{
-        background-color: #16276c;
+    .btn-lista-selected{
+        height: fit-content;
+        min-height: 2.5rem;
+        padding: 0.5rem 1rem;
+        margin: 0.6rem 0;
+        text-align: center;
         border: 5px double;
-        border-radius: 10px;
-        transform: scale(1.05);
+        border-radius: 30px;
+        background-color: #4060e0;
+        color: aliceblue;
+        box-shadow: 0.05rem 0 0.4rem #090919 inset;
         filter: brightness(0.9);
+        cursor: pointer;
     }
 `;
