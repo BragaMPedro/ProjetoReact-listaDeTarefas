@@ -27,6 +27,7 @@ export function ListsBar() {
 
    function deleteLista(event) {
       const listWithoutDelete = listas.filter(lista => lista.id !== selected.id)
+      
       setListas(listWithoutDelete)
       setSelected(listas[0])
    }
