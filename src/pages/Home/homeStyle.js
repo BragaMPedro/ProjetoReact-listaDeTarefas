@@ -3,10 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: row;
-
-    div{
-        margin: 0 2rem;
-    }
 `;
 
 export const Content = styled.div`

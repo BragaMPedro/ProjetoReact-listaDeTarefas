@@ -23,11 +23,6 @@ export function Tarefa({ tarefa, edit, deletarTarefa}) {
         }
 
     }
-
-    function concluidasCheck(){
-
-        setIsChecked(current => !current)
-    }
     
     return(
         <Container>

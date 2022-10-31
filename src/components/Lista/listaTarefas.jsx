@@ -15,7 +15,6 @@ export function Lista({lista}){
     }
 
     function savarAlteracoes(){
-
         setIsEditable(false);
     }
 
@@ -28,8 +27,8 @@ export function Lista({lista}){
             <table>
                 <thead>
                     <tr>
-                        <th contentEditable={isEditable}>
-                            <div>
+                        <th>
+                            <div id="listaNome">
                                 {lista.nome}
                             </div>    
                             <div>
@@ -43,7 +42,7 @@ export function Lista({lista}){
                 <tbody>
                     {tarefas.map(tarefa => (
                         <tr key={tarefa.id}>
-                            <td contentEditable={isEditable} colSpan="3">
+                            <td colSpan="3">
                                 <Tarefa tarefa={tarefa} edit={isEditable} deletarTarefa={deletarTarefa} />
                             </td>
                         </tr>
