@@ -1,10 +1,14 @@
 import { Container } from "./TarefaStyle"
-import { CheckCircle } from "phosphor-react"
+import { CheckCircle, Trash } from "phosphor-react"
 import { useState } from "react"
 
-export function Tarefa({ tarefa, deleteTarefa }) {
+export function Tarefa({ tarefa, edit, deletarTarefa}) {
     const [isChecked, setIsChecked] = useState(false)
     const [tarefasConcluidas, setTarefasConcluidas] = useState([])
+
+    function handleDeletarTarefa(){
+        deletarTarefa(tarefa.id)
+    }
 
     function handleTarefasConcluidas(){
        
@@ -27,12 +31,16 @@ export function Tarefa({ tarefa, deleteTarefa }) {
     
     return(
         <Container>
-            <div className={ tarefasConcluidas.includes(tarefa) ? "tarefa-concluida" : "p" }>
+            <div className={ tarefasConcluidas.includes(tarefa) ? "tarefa-concluida" : "tarefa" }>
                 {tarefa.nome}
             </div>
-            <CheckCircle 
-                className={ tarefasConcluidas.includes(tarefa) ? "btn-concluido-checked" : "btn-concluido" }
-                onClick={handleTarefasConcluidas}/>
+            <div>
+                <CheckCircle 
+                    className={ tarefasConcluidas.includes(tarefa) ? "btn-concluido-checked" : "btn-concluido" }
+                    onClick={handleTarefasConcluidas}/>
+
+                {edit ? <Trash className="btn-deletar" onClick={handleDeletarTarefa}/> : null}
+            </div>
         </Container>
     )
 
