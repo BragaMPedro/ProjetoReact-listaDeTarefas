@@ -6,6 +6,11 @@ export const Container = styled.div`
     align-items: center;
     width: 33%;
     height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
     padding: 2rem 1rem;
     background-color: azure;
     box-shadow: 0.7rem 0 3rem  #09091961;

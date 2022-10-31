@@ -6,10 +6,6 @@ import { ToDoContext } from "../../context/ToDoContext"
 export function ListsBar() {
    const { selected, setSelected, listas, setListas } = useContext(ToDoContext)
 
-//    function handleSelectedLista(lista){
-//     setSelected(lista)
-//    }
-
    function handleNewList(event) {
       let data = new Date()
 
@@ -24,9 +20,9 @@ export function ListsBar() {
             },
          ],
       }
-
       setListas([...listas, NewList])
       setSelected(NewList)
+      //TODO Focus em textarea Nome
    }
 
    function deleteLista(event) {
