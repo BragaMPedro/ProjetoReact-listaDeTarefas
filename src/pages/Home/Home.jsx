@@ -1,16 +1,11 @@
 import { Container, Content } from "./homeStyle";
 import { ToDoContext } from "../../context/ToDoContext";
-import { useEffect, useState, useContext } from "react";
-import { listasArray } from "../../utils/listas";
+import { useContext } from "react";
 import { Lista } from "../../components/Lista/listaTarefas";
 import { ListsBar } from "../../components/SideBar/ListsBar";
 
 export function Home(){
-    const {selected, setSelected, listas, setListas} = useContext(ToDoContext);
- 
-    useEffect( () => {
-        setListas(listasArray);
-    }, []);
+    const {selected, setSelected, listas, setListas } = useContext(ToDoContext);
 
     return(
         <Container>
@@ -23,7 +18,7 @@ export function Home(){
                     <h1>Sua lista aqui</h1>
                 </div>
 
-                <Lista key={selected.id} lista={selected} />
+                <Lista lista={selected} />
 
             </Content>
         </Container>
