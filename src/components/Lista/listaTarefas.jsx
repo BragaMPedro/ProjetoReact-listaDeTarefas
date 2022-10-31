@@ -1,4 +1,5 @@
 import { Container } from "./listaTarefasStyle";
+import { Pen, CheckCircle } from "phosphor-react";
 
 export function Lista({lista}){
 
@@ -6,16 +7,22 @@ export function Lista({lista}){
         <Container>
             <table>
                 <thead>
-                    <th>{lista.nome}</th>
-                    <th>{lista.dataCriacao}</th>
-                    <th>Editar</th>
+                    <tr>
+                        <th>{lista.nome}</th>
+                        {/* <th>{lista.dataCriacao}</th> */}
+                        <th>
+                            <Pen/>
+                        </th>
+                    </tr>
                 </thead>
                 <tbody>
                     {lista.tarefas.map(tarefa => (
                         <tr key={tarefa.id}>
                             <td>{tarefa.nome}</td>
                             <td>Editar</td>
-                            <td>Concluída</td>
+                            <td>
+                                <CheckCircle/>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
