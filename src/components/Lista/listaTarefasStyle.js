@@ -13,7 +13,12 @@ export const Container = styled.div`
         max-height: 80%;
         border-radius: 15px;
         margin: 2rem 1rem;
-        padding: 1rem;
-        box-shadow: 0.7rem 0 3rem  #09091961;
+        box-shadow: 0.2rem 0 3rem  #09091961;
+        background-color: aliceblue;
+    }
+    
+    tr, th{
+        padding: 0.5rem;
+        border-bottom: 1px solid #090919;
     }
 `;
