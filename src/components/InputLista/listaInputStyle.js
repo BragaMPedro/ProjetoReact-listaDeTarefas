@@ -36,25 +36,25 @@ export const Container = styled.form`
       background-color: transparent;
 
       :hover {
-          -webkit-animation: spin 4s linear infinite;
-          -moz-animation: spin 4s linear infinite;
-          animation: spin 4s linear infinite;
+          -webkit-animation: spin 1s linear normal;
+          -moz-animation: spin 1s linear normal;
+          animation: spin 1s linear normal;
       }
 
       @-moz-keyframes spin {
          100% {
-            -moz-transform: rotate(360deg);
+            -moz-transform: rotate(90deg);
          }
       }
       @-webkit-keyframes spin {
          100% {
-            -webkit-transform: rotate(360deg);
+            -webkit-transform: rotate(90deg);
          }
       }
       @keyframes spin {
          100% {
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
          }
       }
    }
