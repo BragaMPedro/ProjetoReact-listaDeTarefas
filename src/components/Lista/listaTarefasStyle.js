@@ -16,7 +16,8 @@ export const Container = styled.div`
          border-bottom: 1px solid #090919;
          margin-bottom: 0.2vh;
 
-         th, input {
+         th,
+         input {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -24,7 +25,7 @@ export const Container = styled.div`
             padding: 0.5rem 1rem;
             font-size: 1.5rem;
 
-            input{
+            input {
                background-color: transparent;
                border-radius: 15px;
                box-shadow: 0.2rem 0.2rem 0.5rem 0.1rem #09091931 inset;
@@ -52,10 +53,15 @@ export const Container = styled.div`
          padding: 1rem;
          filter: brightness(0.85);
 
-         td{
+         tr {
             background-color: aliceblue;
+            
+            &:last-child td {
+               background-color: aliceblue;
+               border-bottom-left-radius: 15px;
+               border-bottom-right-radius: 15px;
+            }
          }
       }
-
    }
-`;
+`
