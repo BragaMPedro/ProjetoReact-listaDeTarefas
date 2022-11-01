@@ -7,9 +7,9 @@ export const ToDoProvider = (props) => {
 
     const [listas, setListas] = useState(listasArray);
     
-    const [tarefasView, setTarefasView] = useState(listas[0].tarefas)
-    
     const [selected, setSelected] = useState(listas[0]);
+    
+    const [tarefasView, setTarefasView] = useState(selected.tarefas)
     
     return(
         <ToDoContext.Provider 

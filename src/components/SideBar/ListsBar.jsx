@@ -9,8 +9,8 @@ export function ListsBar() {
 
    const [addList, setAddList] = useState(false)
 
-   function handleAddList(){
-      setAddList(current => !current);
+   function handleAddList() {
+      setAddList(current => !current)
    }
 
    function handleNewList(nomeLista) {
@@ -27,19 +27,21 @@ export function ListsBar() {
             },
          ],
       }
-      setListas( [...listas, NewList] )
-      setSelected(NewList)
-      setTarefasView(NewList.tarefas)
+      setListas([...listas, NewList])
 
-      setAddList(false);
+      setSelected(NewList)
+      setTarefasView(selected.tarefas)
+
+      setAddList(false)
    }
 
    function deleteLista(event) {
       const listWithoutDelete = listas.filter(lista => lista.id !== selected.id)
-      
+
       setListas(listWithoutDelete)
+
       setSelected(listas[0])
-      setTarefasView(listas[0].tarefas)
+      setTarefasView(selected.tarefas)
    }
 
    return (
@@ -59,15 +61,15 @@ export function ListsBar() {
                   <span
                      key={lista.id}
                      className={lista.id == selected.id ? "btn-lista-selected" : "btn-lista"}
-                     onClick={(event) =>(
-                        setSelected(lista),
-                        setTarefasView(lista.tarefas)
-                     )}>
+                     onClick={event => {
+                        setSelected(lista)
+                        setTarefasView(selected.tarefas)
+                     }}>
                      {lista.nome}
                   </span>
                )
             })}
-            {addList ? ( <ListaInput salvar={handleNewList} /> ) : null}
+            {addList ? <ListaInput salvar={handleNewList} /> : null}
          </SuasListas>
       </Container>
    )
