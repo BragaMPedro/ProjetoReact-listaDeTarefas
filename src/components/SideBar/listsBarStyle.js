@@ -45,7 +45,7 @@ export const Header = styled.div`
 
 export const SuasListas = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     width: 80%;
     margin: 2rem 0;
 

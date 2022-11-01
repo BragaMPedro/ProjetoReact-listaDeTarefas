@@ -1,17 +1,24 @@
 import { Container, Header, SuasListas } from "./listsBarStyle"
+import { ListaInput } from "../InputLista/ListaInput"
 import { Plus, Trash } from "phosphor-react"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { ToDoContext } from "../../context/ToDoContext"
 
 export function ListsBar() {
    const { selected, setSelected, listas, setListas, tarefasView, setTarefasView } = useContext(ToDoContext)
 
-   function handleNewList(event) {
+   const [addList, setAddList] = useState(false)
+
+   function handleAddList(){
+      setAddList(true);
+   }
+
+   function handleNewList(nomeLista) {
       let data = new Date()
 
       const NewList = {
          id: Math.random(),
-         nome: "Nova Lista",
+         nome: nomeLista,
          dataCriacao: `${data.getDate()}/${data.getMonth()}/${data.getFullYear()}`,
          tarefas: [
             {
@@ -20,9 +27,11 @@ export function ListsBar() {
             },
          ],
       }
-      setListas([...listas, NewList])
-      setTarefasView(NewList.tarefas)
+      setListas( [...listas, NewList] )
       setSelected(NewList)
+      setTarefasView(NewList.tarefas)
+
+      setAddList(false);
    }
 
    function deleteLista(event) {
@@ -30,12 +39,13 @@ export function ListsBar() {
       
       setListas(listWithoutDelete)
       setSelected(listas[0])
+      setTarefasView(listas[0].tarefas)
    }
 
    return (
       <Container>
          <Header>
-            <button onClick={handleNewList}>
+            <button onClick={handleAddList}>
                <Plus />
             </button>
 
@@ -57,6 +67,7 @@ export function ListsBar() {
                   </span>
                )
             })}
+            {addList ? ( <ListaInput salvar={handleNewList} /> ) : null}
          </SuasListas>
       </Container>
    )

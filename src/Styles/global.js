@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
         cursor: text;
         border: 0;
         font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        outline: none;
         
         ::placeholder{
             opacity: 0.3;
