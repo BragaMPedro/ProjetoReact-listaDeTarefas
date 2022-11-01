@@ -27,9 +27,11 @@ export function Lista({ lista }) {
          id: Math.random(),
          nome: nomeTarefa,
       }
-
-      const tarefasAtualizadas = tarefasView.push(NovaTarefa)
-      //setTarefasView(tarefasAtualizadas);
+      
+      tarefasView.push(NovaTarefa)
+      const tarefasAtualizadas = tarefasView.filter(tarefa => tarefa !== null)
+      setTarefasView(tarefasAtualizadas);
+      
       setAddTarefa(false);
    }
 
