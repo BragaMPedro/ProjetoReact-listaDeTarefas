@@ -7,8 +7,22 @@ export const Container = styled.div`
    justify-content: space-between;
    padding: 0.3rem 1rem;
 
-   .tarefa {
+   .tarefa{
       margin: 0 1rem;
+   }
+
+   input{
+      font-size: 1rem;
+      background-color: transparent;
+      border-radius: 15px;
+      box-shadow: 0.2rem 0.2rem 0.5rem 0.1rem #09091931 inset;
+      height: 2rem;
+      width: 46%;
+      padding: 0 1rem;
+
+      ::placeholder{
+         opacity: 0.5;
+      }
    }
 
    .tarefa-concluida {

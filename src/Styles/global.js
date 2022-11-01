@@ -12,8 +12,20 @@ export const GlobalStyle = createGlobalStyle`
         color: #010030;
         font-family: 'Montserrat', sans-serif;
     }
-
-    input, textarea, button {
+    
+    input, textarea{
+        cursor: text;
+        border: 0;
+        font-family: 'Montserrat', sans-serif;
+        
+        ::placeholder{
+            opacity: 0.3;
+        }
+    }
+    
+    button {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
         cursor: pointer;
         border: 0;
     }

@@ -16,16 +16,19 @@ export const Container = styled.div`
          border-bottom: 1px solid #090919;
          margin-bottom: 0.2vh;
 
-         div{
-            font-size: 1.5rem;
-         }
-
-         th {
+         th, input {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
             padding: 0.5rem 1rem;
+            font-size: 1.5rem;
+
+            input{
+               background-color: transparent;
+               border-radius: 15px;
+               box-shadow: 0.2rem 0.2rem 0.5rem 0.1rem #09091931 inset;
+            }
 
             .btn-acao {
                margin: 0 1rem;
@@ -47,7 +50,7 @@ export const Container = styled.div`
 
       tbody {
          padding: 1rem;
-         filter: brightness(0.8);
+         filter: brightness(0.85);
 
          td{
             background-color: aliceblue;

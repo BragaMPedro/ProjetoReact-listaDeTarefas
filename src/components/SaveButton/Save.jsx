@@ -2,7 +2,7 @@ import { Container } from "./saveStyle"
 
 export function Salvar({salvarAlteracoes}){
 
-    function handleSalvarAlteracoes(){
+    function handleSalvarAlteracoes(event){
         salvarAlteracoes();
     }
 
