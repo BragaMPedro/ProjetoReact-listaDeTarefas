@@ -5,7 +5,7 @@ import { Lista } from "../../components/Lista/listaTarefas";
 import { ListsBar } from "../../components/SideBar/ListsBar";
 
 export function Home(){
-    const {selected, setSelected, listas, setListas } = useContext(ToDoContext);
+    const { selected } = useContext(ToDoContext);
 
     return(
         <Container>
@@ -13,7 +13,7 @@ export function Home(){
             <ListsBar/>
 
             <Content>
-                <div>
+                <div className="title">
                     <h1>Bem vindo ao Listeiro</h1>
                     <h1>Sua lista aqui</h1>
                 </div>

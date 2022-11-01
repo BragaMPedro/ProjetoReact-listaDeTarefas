@@ -7,14 +7,12 @@ export function Salvar({salvarAlteracoes}){
     }
 
     return(
-        <Container>
-            <tfoot>
+            <Container>
                 <tr>
                     <td onClick={handleSalvarAlteracoes}>
                         Salvar
                     </td>
                 </tr>
-            </tfoot>
-        </Container>
+            </Container>
     )
 }

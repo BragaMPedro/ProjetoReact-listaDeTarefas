@@ -1,10 +1,10 @@
 import { Container, Header, SuasListas } from "./listsBarStyle"
 import { Plus, Trash } from "phosphor-react"
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { ToDoContext } from "../../context/ToDoContext"
 
 export function ListsBar() {
-   const { selected, setSelected, listas, setListas } = useContext(ToDoContext)
+   const { selected, setSelected, listas, setListas, tarefasView, setTarefasView } = useContext(ToDoContext)
 
    function handleNewList(event) {
       let data = new Date()
@@ -21,8 +21,8 @@ export function ListsBar() {
          ],
       }
       setListas([...listas, NewList])
+      setTarefasView(NewList.tarefas)
       setSelected(NewList)
-      //TODO Focus em textarea Nome
    }
 
    function deleteLista(event) {
@@ -50,7 +50,8 @@ export function ListsBar() {
                      key={lista.id}
                      className={lista.id == selected.id ? "btn-lista-selected" : "btn-lista"}
                      onClick={(event) =>(
-                        setSelected(lista)
+                        setSelected(lista),
+                        setTarefasView(lista.tarefas)
                      )}>
                      {lista.nome}
                   </span>

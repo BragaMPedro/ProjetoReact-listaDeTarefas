@@ -8,12 +8,13 @@ export const Container = styled.div`
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
     width: 77%;
     height: 100vh;
     padding: 2rem 1rem;
 
-    div{
+    .title{
+        margin-top: 5vh;
         text-align: center;
         height: 20%;
     }

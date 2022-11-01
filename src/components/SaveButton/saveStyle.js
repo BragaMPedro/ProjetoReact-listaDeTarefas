@@ -1,15 +1,13 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
-
-   tfoot{
+export const Container = styled.tfoot`
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 0.5rem;
-   }
 
-   tfoot > tr > td {
+
+   tr > td {
       cursor: pointer;
       border-radius: 30px;
       padding: 0.5rem 3rem;

@@ -5,7 +5,7 @@ export const Container = styled.div`
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
-   padding: 0.3rem;
+   padding: 0.3rem 1rem;
 
    .tarefa {
       margin: 0 1rem;

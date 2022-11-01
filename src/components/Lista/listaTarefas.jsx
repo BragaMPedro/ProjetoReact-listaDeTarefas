@@ -1,23 +1,27 @@
+import { ToDoContext } from "../../context/ToDoContext";
 import { Container } from "./listaTarefasStyle";
 import { Tarefa } from "../Tarefas/Tarefa";
 import { Salvar } from "../SaveButton/Save";
 import { Pen, PlusCircle } from "phosphor-react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 export function Lista({lista}){
+    const { tarefasView, setTarefasView } = useContext(ToDoContext);
     const [isEditable, setIsEditable] = useState(false)
-    const [tarefas, setTarefas] = useState(lista.tarefas)
 
     function deletarTarefa(id){
-        const tarefasSemDeletada = tarefas.filter((tarefa) => tarefa.id !== id);
-
-        setTarefas(tarefasSemDeletada);
+        const tarefasSemDeletada = tarefasView.filter((tarefa) => tarefa.id !== id);
+        setTarefasView(tarefasSemDeletada);
     }
 
+    function handleNovaTarefa(){
+        
+    }
+    
     function savarAlteracoes(){
         setIsEditable(false);
     }
-
+    
     function handleEditarlista(){
         setIsEditable(true);
     }
@@ -28,19 +32,18 @@ export function Lista({lista}){
                 <thead>
                     <tr>
                         <th>
-                            <div id="listaNome">
+                            <div>
                                 {lista.nome}
                             </div>    
                             <div>
                                 <Pen className="btn-acao" onClick={handleEditarlista}/>
-                                <PlusCircle className="btn-acao"/>
+                                <PlusCircle className="btn-acao" onClick={handleNovaTarefa}/>
                             </div>
                         </th>
- 
                     </tr>
                 </thead>
                 <tbody>
-                    {tarefas.map(tarefa => (
+                    {tarefasView.map(tarefa => (
                         <tr key={tarefa.id}>
                             <td colSpan="3">
                                 <Tarefa tarefa={tarefa} edit={isEditable} deletarTarefa={deletarTarefa} />
