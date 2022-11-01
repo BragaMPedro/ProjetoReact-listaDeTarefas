@@ -18,7 +18,7 @@ export function TarefaInput({salvar}){
             <tr>
                 <td>
                     <form onSubmit={handleSubmit}>
-                        <input type="text" autoFocus onChange={handleNewTarefaInput} placeholder="Sua Nova Tarefa aqui" />
+                        <input type="text" required autoFocus onChange={handleNewTarefaInput} placeholder="Sua Nova Tarefa aqui" />
                         <button type="submit">Adicionar</button>
                     </form>
                </td>

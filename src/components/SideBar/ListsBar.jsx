@@ -10,7 +10,7 @@ export function ListsBar() {
    const [addList, setAddList] = useState(false)
 
    function handleAddList(){
-      setAddList(true);
+      setAddList(current => !current);
    }
 
    function handleNewList(nomeLista) {

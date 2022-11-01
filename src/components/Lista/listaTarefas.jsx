@@ -19,7 +19,7 @@ export function Lista({ lista }) {
 
    function handleButtonAdd(){
         setIsEditable(false)
-        setAddTarefa(true)
+        setAddTarefa(current => !current)
    }
 
    function salvarNovaTarefa(nomeTarefa) {

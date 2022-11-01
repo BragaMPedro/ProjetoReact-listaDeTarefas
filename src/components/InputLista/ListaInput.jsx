@@ -16,7 +16,7 @@ export function ListaInput({salvar}){
 
     return(
         <Container onSubmit={handleSalvarLista}>
-            <input type="text" autoFocus onChange={handleNewListaInput} placeholder="Digite nome da Lista"/>
+            <input type="text" required autoFocus onChange={handleNewListaInput} placeholder="Digite nome da Lista"/>
             <button type="submit">
                 <PlusCircle/>
             </button>
