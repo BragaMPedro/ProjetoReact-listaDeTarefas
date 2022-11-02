@@ -30,7 +30,6 @@ export function ListsBar() {
       setListas([...listas, NewList])
 
       setSelected(NewList)
-      setTarefasView(selected.tarefas)
 
       setAddList(false)
    }
@@ -41,7 +40,6 @@ export function ListsBar() {
       setListas(listWithoutDelete)
 
       setSelected(listas[0])
-      setTarefasView(selected.tarefas)
    }
 
    return (
@@ -63,7 +61,6 @@ export function ListsBar() {
                      className={lista.id == selected.id ? "btn-lista-selected" : "btn-lista"}
                      onClick={event => {
                         setSelected(lista)
-                        setTarefasView(selected.tarefas)
                      }}>
                      {lista.nome}
                   </span>

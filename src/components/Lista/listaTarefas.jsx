@@ -3,14 +3,23 @@ import { Container } from "./listaTarefasStyle"
 import { Tarefa } from "../Tarefas/Tarefa"
 import { Salvar } from "../SaveButton/Save"
 import { Pen, PlusCircle } from "phosphor-react"
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { TarefaInput } from "../InputTarefa/TarefaInput"
 
 export function Lista({ lista }) {
-   const { tarefasView, setTarefasView } = useContext(ToDoContext);
+   const { tarefasView, setTarefasView, selected } = useContext(ToDoContext);
 
    const [isEditable, setIsEditable] = useState(false);
    const [addTarefa, setAddTarefa] = useState(false);
+
+   
+   useEffect(()=> {
+      setTarefasView(selected.tarefas);
+      
+      return () => {
+         
+      };
+   }, [selected.tarefas]);
 
    function handleButtonEditable(){
         setIsEditable(current => !current)
